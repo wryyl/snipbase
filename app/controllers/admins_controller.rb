@@ -26,7 +26,7 @@ class AdminsController < ApplicationController
         admins_to_process.each do |a|
             admin = User.find_by(:username => a)
             if !toggle_admin?(admin)
-                msg = "An UNEXPECTED Error has occured for user #{a}"
+                msg = "An UNEXPECTED Error has occurred for user #{a}"
                 flash[:danger] = msg
                 success = false
             end
@@ -47,7 +47,7 @@ class AdminsController < ApplicationController
             msg = "Successfully removed #{user.username}"
             flash.now[:success] = msg
         else
-            msg = "An UNEXPECTED Error has occured"
+            msg = "An UNEXPECTED Error has occurred"
             flash.now[:danger] = msg
         end
         respond_to_request
